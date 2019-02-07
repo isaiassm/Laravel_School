@@ -11,6 +11,9 @@
 |
 */
 
+
+Route::get('/alunos', 'AlunoController@listar');
+
 Route::get('/', function () {
     return view('welcome');
 });
