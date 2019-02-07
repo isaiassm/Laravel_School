@@ -1,5 +1,5 @@
 
-@extends('head')
+@extends('layout.head')
 
 @section('title')
     Listagem de Alunos

@@ -13,6 +13,7 @@
 
 
 Route::get('/alunos', 'AlunoController@listar');
+Route::get('/alunos/form', 'AlunoController@form');
 
 Route::get('/', function () {
     return view('welcome');

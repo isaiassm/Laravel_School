@@ -10,6 +10,11 @@ class AlunoController extends Controller
     public function listar()
     {
         $listar = Aluno::all();
-        return view('listagem')->with('listar', $listar);
+        return view('Alunos.listagem')->with('listar', $listar);
+    }
+
+    public function form()
+    {
+        return view('Alunos.formAlunos');
     }
 }
