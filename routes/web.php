@@ -14,6 +14,10 @@
 
 Route::get('/alunos', 'AlunoController@listar');
 Route::get('/alunos/form', 'AlunoController@form');
+Route::post('/alunos/inserir','AlunoController@inserir');
+Route::get('/alunos/delete/{id}', 'AlunoController@delete');
+
+
 
 Route::get('/', function () {
     return view('welcome');

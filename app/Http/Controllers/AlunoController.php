@@ -17,4 +17,21 @@ class AlunoController extends Controller
     {
         return view('Alunos.formAlunos');
     }
+
+    public function inserir(Request $request)
+    {
+        Aluno::create($request->all());
+        return redirect('/alunos')->withInput();
+        
+    }
+
+    public function delete($id)
+    {
+        $listar = Aluno::find($id);
+        $listar->delete();
+
+        return redirect()->action('AlunoController@listar');
+    }
+
+    
 }

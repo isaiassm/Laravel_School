@@ -10,30 +10,31 @@
 <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Cpf</th>
+        <th scope="col">Cep</th>
+        <th scope="col">Sexo</th>
       </tr>
     </thead>
     <tbody>
+      @foreach ($listar as $lista)
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
+          <th scope="row">{{$lista->id}}</th>
+          <td>{{$lista->name}}</td>
+          <td>{{$lista->idade}}</td>
+          <td>{{$lista->telefone}}</td>
+          <td>{{$lista->cpf}}</td>
+          <td>{{$lista->cep}}</td>
+          <td>{{$lista->sexo}}</td>
+         <td>
+            <a class='text-success' > Editar </a>
+            <a class='text-dark' href="/alunos/delete/{{$lista->id}}"> Remover </a>
+         </td>
+        </tr>
+     
+      </tbody>
+      @endforeach
   </table>
