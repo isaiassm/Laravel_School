@@ -30,7 +30,7 @@
           <td>{{$lista->cep}}</td>
           <td>{{$lista->sexo}}</td>
          <td>
-            <a class='text-success' > Editar </a>
+         <a class='text-success' href="/alunos/formUpdate/{{$lista->id}}"> Editar </a>
             <a class='text-dark' href="/alunos/delete/{{$lista->id}}"> Remover </a>
          </td>
         </tr>

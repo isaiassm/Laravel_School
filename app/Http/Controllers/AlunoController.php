@@ -25,6 +25,21 @@ class AlunoController extends Controller
         
     }
 
+    public function formUpdate($id)
+    {
+        $aluno = Aluno::find($id);
+       
+        return view('Alunos.formUpdate', compact('aluno'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $aluno =  request()->all();
+         Aluno::where('id', '=', $id)->update($aluno);
+         return redirect()->to('alunos');
+        
+    }
+
     public function delete($id)
     {
         $listar = Aluno::find($id);
