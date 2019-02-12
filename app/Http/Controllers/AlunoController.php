@@ -32,11 +32,26 @@ class AlunoController extends Controller
         return view('Alunos.formUpdate', compact('aluno'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Aluno $aluno)
     {
-        $aluno =  request()->all();
-         Aluno::where('id', '=', $id)->update($aluno);
-         return redirect()->to('alunos');
+     
+      $aluno = Aluno::where('id', $aluno->id)
+      ->update([
+        'name'=> $request->input('name'),
+        'idade'=> $request->input('idade'),
+        'telefone'=> $request->input('telefone'),
+        'cpf'=> $request->input('cpf'),
+        'cep'=> $request->input('cep'),
+        'sexo'=> $request->input('sexo')
+
+      ]);    
+      
+
+      if ($aluno) {
+          return redirect()->route('alunos.index', ['aluno' =>$aluno->id]);
+      }
+            return back()->withInput();
+         
         
     }
 
