@@ -35,29 +35,21 @@ class AlunoController extends Controller
     public function update(Request $request, Aluno $aluno)
     {
      
-      $aluno = Aluno::where('id', $aluno->id)
-      ->update([
-        'name'=> $request->input('name'),
-        'idade'=> $request->input('idade'),
-        'telefone'=> $request->input('telefone'),
-        'cpf'=> $request->input('cpf'),
-        'cep'=> $request->input('cep'),
-        'sexo'=> $request->input('sexo')
+    $formupdate = Aluno::find($request->id);
 
-      ]);    
-      
+    $alunos = $request->all();
 
-      if ($aluno) {
-          return redirect()->route('alunos.index', ['aluno' =>$aluno->id]);
-      }
-            return back()->withInput();
-         
+    
+    
+
+    //dd($alunos);
         
     }
 
     public function delete($id)
     {
         $listar = Aluno::find($id);
+        
         $listar->delete();
 
         return redirect()->action('AlunoController@listar');

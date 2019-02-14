@@ -16,7 +16,7 @@ Route::get('/alunos', 'AlunoController@listar')->name('alunos.index');
 Route::get('/alunos/form', 'AlunoController@form');
 Route::get('/alunos/formUpdate/{id}', 'AlunoController@formUpdate')->name('alunos.update');
 Route::post('/alunos/inserir','AlunoController@inserir');
-Route::post('/alunos/update/{id}','AlunoController@update');
+Route::post('/alunos/update/{id}','AlunoController@update')->name('alunos.updateaction');
 Route::get('/alunos/delete/{id}', 'AlunoController@delete');
 
 

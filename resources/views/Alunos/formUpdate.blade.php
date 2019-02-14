@@ -4,7 +4,7 @@
     Formulario de Atulização de registro de Alunos
 @endsection
 <div align="center">
-<form action="/alunos/update/{id}" method="POST" >
+<form action="{{route('alunos.updateaction', $aluno->id)}}" method="POST" >
   <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
         
         <div class="form-group row">
